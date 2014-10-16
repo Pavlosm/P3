@@ -11,7 +11,23 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+Route::get('/', function(){
+   return View::make('Homepage');
+});
+
+Route::get('/Lorem_Ipsum_Generator', function(){
+    return View::make('LoremIpsum');
+});
+
+Route::post('/Lorem_Ipsum_Generator', function(){
+    return View::make('LoremIpsum');
+});
+
+Route::get('/Random_User_Generator',function(){
+    return View::make('UserGenerator');
+});
+
+
+Route::post('/Random_User_Generator',function(){
+    return View::make('UserGenerator');
 });
