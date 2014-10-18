@@ -17,6 +17,8 @@
         }
     </style>
 
+    @yield('style')
+
 </head>
 <body>
     <div class="container" id="header">

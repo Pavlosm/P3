@@ -1,18 +1,15 @@
 @extends('BaseTemplate')
 
+
 @section('title')
     <title>P3 Homepage</title>
-
-    <style type="text/css">
-        #mainBody{
-            padding-left: 25px;
-            padding-right: 25px;
-        }
-        .image{
-            max-width: 100px;
-        }
-    </style>
 @stop
+
+
+@section('style')
+    <link rel='stylesheet' href='styles/homepage.css' type='text/css'>
+@stop
+
 
 @section('header')
     <nav class="navbar navbar-default" role="navigation">

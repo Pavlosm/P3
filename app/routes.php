@@ -11,23 +11,48 @@
 |
 */
 
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| This is the route to the homepage of P3. No forms are attached so only a
+| get method is defined
+*/
+
 Route::get('/', function(){
    return View::make('Homepage');
 });
 
-Route::get('/Lorem_Ipsum_Generator', function(){
-    return View::make('LoremIpsum');
-});
 
-Route::post('/Lorem_Ipsum_Generator', function(){
-    return View::make('LoremIpsum');
-});
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| This is the route to the lorem ipsum generator. It has both a get and a
+| post form
+|
+*/
 
-Route::get('/Random_User_Generator',function(){
-    return View::make('UserGenerator');
-});
+Route::get('/Lorem_Ipsum_Generator', 'LoremIpsumController@GetDefaultPage');
 
 
-Route::post('/Random_User_Generator',function(){
-    return View::make('UserGenerator');
-});
+Route::post('/Lorem_Ipsum_Generator', 'LoremIpsumController@GetResults');
+
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| This is the route to the random user generator. It has both a get and a
+| post form
+|
+*/
+Route::get('/Random_User_Generator', 'RandomUserController@GetDefaultPage');
+
+
+Route::post('/Random_User_Generator','RandomUserController@GetResults');
+

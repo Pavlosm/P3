@@ -1,25 +1,36 @@
-## Laravel PHP Framework
+Project 3 README file
+=====================
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Live URL Link for P2 
+--------------------
+http://p3.cpmi.ninja
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+Demo URL Link for P2
+--------------------
+n/a
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+Short description
+-----------------
+P3 includes two web applications, one for creating lorem ipsum text and another
+one for creating random user profiles.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Notes for TA
+------------
 
-## Official Documentation
+### Where is what
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+* All resources that are used in the forms like images and stylesheets are in the 
+"public" directory.
 
-### Contributing To Laravel
+* All views are in the "views" directory
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+* The logic for the routes is in the "controller" directory
 
-### License
+* There is a class "RandomUser", which is used just to play around with classes 
+and objects, which provides some different printing functionality.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+### External code
+
+* badcow/lorem-ipsum (https://packagist.org/packages/badcow/lorem-ipsum)
+
+* fzaninotto/faker (https://packagist.org/packages/fzaninotto/faker)

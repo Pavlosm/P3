@@ -1,52 +1,20 @@
 @extends('BaseTemplate')
 
+
 @section('title')
     <title> Lorem Ipsum Generator</title>
-
-    <style type="text/css">
-        #header {
-            background-color: #14263d;
-            border-color: #14263d;
-            padding-bottom: 5px;
-            color: #ebebeb;
-            border-radius: 5px;
-        }
-        #mainBody{
-            padding-left: 25px;
-            padding-right: 25px;
-            padding-top: 25px;
-        }
-
-        .app {
-            padding: 15px;
-            background-color: #ececec;
-            max-width: 500px;
-            border-radius: 10px;
-            border-color: #ececec;
-            border-bottom-style: solid;
-            -webkit-box-shadow: 0 10px 6px -6px #777;
-            -moz-box-shadow: 0 10px 6px -6px #777;
-            box-shadow: 0 10px 6px -6px #777;
-        }
-
-        .generator{
-            max-width: 500px;
-        }
-
-        .results {
-            max-width: 1000px;
-        }
-
-        .select {
-            max-width: 70px;
-        }
-
-    </style>
 @stop
+
+
+@section('style')
+    <link rel='stylesheet' href='styles/loremIpsum.css' type='text/css'>
+@stop
+
 
 @section('header')
     <h1>Lorem Ipsum Generator</h1>
 @stop
+
 
 @section('mainBody')
     <a href="/"><span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp; Homepage </a>
@@ -54,55 +22,52 @@
     <a href="/Random_User_Generator">Random User Generator &nbsp;<span class="glyphicon glyphicon-circle-arrow-right"></span></a>
     <br /><br />
     <p>
-        Use the generator below to create paragraphs with random lorem ispum text which you can then copy and paste to
-        use.
-        <br />
-        You can choose the number of paragraphs as well as the size of the paragraphs.
+        Use the generator below to create paragraphs with random lorem ispum style text, which you can then copy and
+        paste to use.
+    </p>
+    <p>
+        You can choose the number of paragraphs as well as the size of the paragraphs and you can add a list of words or
+        phrases that you want to be displayed in the text (note: the separate word or phrases must be " , " separated).
     </p>
     <h3>Generator</h3>
+
     <div class="app generator">
-        <form role="form" method="POST">
-            <div class="form-group">
-                <label for="numberOfParagraphs">Choose Number of Paragraphs (max 9)</label><br />
-                <select class="form-control select" id="numberOfParagraphs" name="numberOfParagraphs">
-                    <option value="1" >1</option>
-                    <option value="2" >2</option>
-                    <option value="3" >3</option>
-                    <option value="4" selected="selected">4</option>
-                    <option value="5" >5</option>
-                    <option value="6" >6</option>
-                    <option value="7" >7</option>
-                    <option value="8" >8</option>
-                    <option value="9" >9</option>
-                </select>
-            </div>
+        {{ Form::open(array('url'=>'/Lorem_Ipsum_Generator', 'method'=>'POST', 'role'=>'form')) }}
 
-            <div class="form-group">
-                <label for="additionalWords">Enter words that you want to include</label>
-                <input type="text" class="form-control" id="additionalWords" placeholder="format comma separated ex:  aaa, bbb">
-            </div>
+        <div class="form-group">
+            {{ Form::label('numberOfParagraphs', 'Choose Number of paragraphs') }}
+            {{ Form::select('numberOfParagraphs', [ '1', '2', '3', '4', '5', '6', '7', '8', '9' ], '4',
+                             array('class' => 'form-control select')) }}
+        </div>
 
-            <label>Paragraph size</label><br />
-            <div class="radio-inline">
-                <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Small
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Medium
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Large
-                </label>
-            </div>
-            <br /><br />
+        <div class="form-group">
+            {{ Form::label('additionalWords', 'Enter words that you want to include') }}
+            {{ Form::text('additionalWords', null,
+                          array('class' => 'form-control users', 'placeholder' => 'word1, word2, etc')) }}
+        </div>
 
-            <button type="submit" class="btn btn-primary">Generate text</button>
-        </form>
+        {{ Form::label('Enter words that you want to include') }}
+
+        <div>
+            {{ Form::label('inlineRadio1', 'Small', array('class' => 'radio-inline')) }}
+            {{ Form::radio('inlineRadioOptions', 'small', true, array( 'id' => 'inlineRadio1')) }}
+
+            {{ Form::label('inlineRadio2', 'Medium', array('class' => 'radio-inline')) }}
+            {{ Form::radio('inlineRadioOptions', 'medium', false, array( 'id' => 'inlineRadio2')) }}
+
+            {{ Form::label('inlineRadio3', 'Large', array('class' => 'radio-inline')) }}
+            {{ Form::radio('inlineRadioOptions', 'large', false, array( 'id' => 'inlineRadio3')) }}
+        </div>
+
+        <br />
+
+        {{ Form::submit('Generate text', array('class' => 'btn btn-primary')) }}
+
     </div>
     <br />
     <h3>Random Text</h3>
     <div class="app results">
-
+        <p>{{ $random }}
     </div>
     <br />
 @stop

@@ -1,56 +1,20 @@
 @extends('BaseTemplate')
 
+
 @section('title')
     <title> Lorem Ipsum Generator</title>
-
-    <style type="text/css">
-        #header {
-            background-color: #14263d;
-            border-color: #14263d;
-            padding-bottom: 5px;
-            color: #ebebeb;
-            border-radius: 5px;
-        }
-        #mainBody{
-            padding-left: 25px;
-            padding-right: 25px;
-            padding-top: 25px;
-        }
-
-        .app {
-            padding: 15px;
-            background-color: #ececec;
-            max-width: 500px;
-            border-radius: 10px;
-            border-color: #ececec;
-            border-bottom-style: solid;
-            -webkit-box-shadow: 0 10px 6px -6px #777;
-            -moz-box-shadow: 0 10px 6px -6px #777;
-            box-shadow: 0 10px 6px -6px #777;
-        }
-
-        .generator{
-            max-width: 500px;
-        }
-
-        .results {
-            max-width: 1000px;
-        }
-
-        .users {
-            max-width: 70px;
-        }
-
-        .select {
-            max-width: 120px;
-        }
-
-    </style>
 @stop
+
+
+@section('style')
+    <link rel='stylesheet' href='styles/randomUser.css' type='text/css'>
+@stop
+
 
 @section('header')
     <h1>Lorem Ipsum Generator</h1>
 @stop
+
 
 @section('mainBody')
     <a href="/"><span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp; Homepage </a>
@@ -58,75 +22,70 @@
     <a href="/Lorem_Ipsum_Generator">Lorem Ipsum Generator &nbsp;<span class="glyphicon glyphicon-circle-arrow-right"></span></a>
     <br /><br />
     <p>
-        Use the generator below to create random user profiles that include:
-        <ul>
-            <li>name</li>
-            <li>surname</li>
-            <li>username</li>
-            <li>password</li>
-            <li>date of birth (optional)</li>
-        </ul>
-
+        Use the generator below to create random user profiles that include a name and a surname, an email, and
+        optionally an address and a date of birth. Additionally there are three available formats for the output:
     </p>
     <p>
-        Additionally, to provide a more useful service the data can be displayed in one of the two formats:
-        <ul>
-            <li>plain text format</li>
-            <li>json format</li>
-        </ul>
+        <dl>
+            <dt>sequence of fields </dt>
+            <dd><small><i>[first name], [last name], [email], [date of birth (optional)], [address (optional)]</i></small></dd>
+            <dt>plain text format (csv style)</dt>
+            <dd><small><i> {{ $plain_user }} </i></small></dd>
+            <dt>formatted text format</dt>
+            <dd><small><i> {{ $formatted_user }} </i></small></dd>
+            <dt>json format</dt>
+            <dd><small><i> {{ $json_user }} </i></small></dd>
+        </dl>
     </p>
 
     <h3>Generator</h3>
     <div class="app generator">
-        <form role="form" method="POST">
+
+        {{ Form::open(array('url'=>'Random_User_Generator', 'method'=>'POST', 'role'=>'form')) }}
+
             <div class="form-group">
-                <label for="numberOfUsers">Choose number of users (max 30)</label><br />
-                <input type="text" class="form-control users" id="numberOfUsers" placeholder="ex 5">
+                {{ Form::label('numberOfUsers', 'Choose number of users (max 30)') }}
+                {{ Form::text('numberOfUsers', null, array('class' => 'form-control users', 'placeholder' => 'ex 5')); }}
             </div>
+            @if ($errors->has('numberOfUsers')) <p class="error">{{ $errors->first('numberOfUsers') }}</p> @endif
+
             <hr style="background:#cccbca; border:0; height:1px" />
+
             <div class="checkbox">
-                <label>
-                    <input type="checkbox"> <h4>Add a date of birth</h4>
-                </label>
+                {{ Form::label('dob', 'Add a date of birth') }}
+                {{ Form::checkbox('dob', 'yes') }}
             </div>
+
             <hr style="background:#cccbca; border:0; height:1px" />
+
+            <div class="checkbox">
+                            {{ Form::label('address', 'Add an Address') }}
+                            {{ Form::checkbox('address', 'yes') }}
+            </div>
+
+            <hr style="background:#cccbca; border:0; height:1px" />
+
             <div class="form-group">
-                <label for="dataFormat">Choose data format</label><br />
-                <select class="form-control select" id="dataFormat" name="dataFormat">
-                    <option value="1" selected="selected">plain text</option>
-                    <option value="2" >json</option>
-                </select>
+                {{ Form::label('dataFormat', 'Choose data format') }}
+                {{ Form::select('dataFormat', [ 'formatted/text' => 'formatted text',
+                                                'plain/text' => 'plain text',
+                                                'json' => 'json'], 'formatted/text',
+                                                array('class' => 'form-control select')) }}
             </div>
-            <hr style="background:#cccbca; border:0; height:1px" />
-            <button type="submit" class="btn btn-primary">Generate users</button>
-        </form>
+
+            {{ Form::submit('Generate User(s)', array('class' => 'btn btn-primary')) }}
+
+        {{ Form::close() }}
+
     </div>
     <br />
     <h3>Random Users</h3>
     <div class="app results">
-        <p>
-            Name: Adam <br />
-            Surname: Scot <br />
-            Username: username <br />
-            Password: 12dfjdf <br />
-            Birth date: 29/03/2012 <br />
-        </p>
-        <hr style="background:#ff8d00; border:0; height:1px" />
-        <p>
-            Name: Adam <br />
-            Surname: Scot <br />
-            Username: username <br />
-            Password: 12dfjdf <br />
-            Birth date: 29/03/2012 <br />
-        </p>
-        <hr style="background:#ff8d00; border:0; height:1px" />
-        <p>
-            Name: Adam <br />
-            Surname: Scot <br />
-            Username: username <br />
-            Password: 12dfjdf <br />
-            Birth date: 29/03/2012 <br />
-        </p>
+        @foreach($results as $res)
+            {{ $res }}
+            <hr style="background:#cccbca; border:0; height:1px" />
+        @endforeach
+
     </div>
     <br />
 @stop

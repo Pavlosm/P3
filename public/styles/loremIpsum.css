@@ -1,0 +1,36 @@
+#header {
+            background-color: #14263d;
+            border-color: #14263d;
+            padding-bottom: 5px;
+            color: #ebebeb;
+            border-radius: 5px;
+        }
+        #mainBody{
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 25px;
+        }
+
+        .app {
+            padding: 15px;
+            background-color: #ececec;
+            max-width: 500px;
+            border-radius: 10px;
+            border-color: #ececec;
+            border-bottom-style: solid;
+            -webkit-box-shadow: 0 10px 6px -6px #777;
+            -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+        }
+
+        .generator{
+            max-width: 500px;
+        }
+
+        .results {
+            max-width: 1000px;
+        }
+
+        .select {
+            max-width: 70px;
+        }
