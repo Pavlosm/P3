@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
 
-    @yield('title', 'CSCIE-15 P3')
+    @yield('title', 'CSCIE-15 P3 - pmi')
 
     <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css" rel="stylesheet">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" ></script>
+
     <style>
         .footer {
             background-color: #14263d;
@@ -16,6 +21,7 @@
             border-radius: 5px;
         }
     </style>
+
 
     @yield('style')
 
@@ -37,9 +43,5 @@
             <a href="http://p4.cpmi.ninja"> Project 4</a>
         </div>
     </div>
-
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js">
-        //@yield('script');
-    </script>
 </body>
 </html>

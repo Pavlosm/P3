@@ -29,12 +29,12 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Project Portfolio <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Project portfolio <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="http://p1.cpmi.ninja">P1</a></li>
-                            <li><a href="http://p2.cpmi.ninja">P2</a></li>
-                            <li><a href="http://p4.cpmi.ninja">P4</a></li>
-                        </ul>
+                            <li><a href="#"><a href="http://p1.cpmi.ninja">P1</a></a></li>
+                            <li><a href="#"><a href="http://p2.cpmi.ninja">P2</a></a></li>
+                            <li><a href="#"><a href="http://p4.cpmi.ninja">P3</a></a></li>
+                         </ul>
                     </li>
                     <li><a href="/Lorem_Ipsum_Generator">Lorem Ipsum Generator</a></li>
                     <li><a href="/Random_User_Generator">Random User Generator</a></li>
