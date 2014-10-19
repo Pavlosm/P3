@@ -36,11 +36,8 @@ Route::get('/', function(){
 |
 */
 
-//Route::get('Lorem_Ipsum_Generator', 'LoremIpsumController@GetDefaultPage');
+Route::get('Lorem_Ipsum_Generator', 'LoremIpsumController@GetDefaultPage');
 
-Route::get('/Lorem_Ipsum_Generator', function(){
-	return "I am here";
-});
 Route::post('/Lorem_Ipsum_Generator', 'LoremIpsumController@GetResults');
 
 
