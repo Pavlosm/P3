@@ -2,7 +2,7 @@
 
 
 @section('title')
-    <title> Lorem Ipsum Generator</title>
+    <title> Random User Generator</title>
 @stop
 
 
@@ -59,8 +59,8 @@
             <hr style="background:#cccbca; border:0; height:1px" />
 
             <div class="checkbox">
-                            {{ Form::label('address', 'Add an Address') }}
-                            {{ Form::checkbox('address', 'yes') }}
+                {{ Form::label('address', 'Add an Address') }}
+                {{ Form::checkbox('address', 'yes') }}
             </div>
 
             <hr style="background:#cccbca; border:0; height:1px" />

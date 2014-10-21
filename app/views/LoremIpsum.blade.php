@@ -46,7 +46,7 @@
                           array('class' => 'form-control users', 'placeholder' => 'word1, word2, etc')) }}
         </div>
 
-        {{ Form::label('Enter words that you want to include') }}
+        <label>'Enter words that you want to include'</label>
 
         <div>
             {{ Form::label('inlineRadio1', 'Small', array('class' => 'radio-inline')) }}
@@ -62,6 +62,8 @@
         <br />
 
         {{ Form::submit('Generate text', array('class' => 'btn btn-primary')) }}
+
+        {{ Form::close() }}
 
     </div>
     <br />

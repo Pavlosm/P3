@@ -34,3 +34,10 @@ and objects, which provides some different printing functionality.
 * badcow/lorem-ipsum (https://packagist.org/packages/badcow/lorem-ipsum)
 
 * fzaninotto/faker (https://packagist.org/packages/fzaninotto/faker)
+
+### Other notes
+
+I did not add many special features on top of those defined in the project. My 
+focus was primarily in making use of Laravel and its resources (like validators,
+controllers, blade template etc), and generally placing things in the right 
+places.
