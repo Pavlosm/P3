@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 
-    @yield('title', 'CSCIE-15 P3 - pmi')
+    @yield('title', 'PavlosMi - CSCIE-15 P3')
 
     <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css" rel="stylesheet">

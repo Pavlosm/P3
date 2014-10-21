@@ -22,7 +22,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">P3 - DWA 15</a>
+                <a class="navbar-brand" href="#">PavlosMi - CSCIE-15 P3</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -33,7 +33,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#"><a href="http://p1.cpmi.ninja">P1</a></a></li>
                             <li><a href="#"><a href="http://p2.cpmi.ninja">P2</a></a></li>
-                            <li><a href="#"><a href="http://p4.cpmi.ninja">P3</a></a>a</li>
+                            <li><a href="#"><a href="http://p4.cpmi.ninja">P3</a></a></li>
                          </ul>
                     </li>
                     <li><a href="/Lorem_Ipsum_Generator">Lorem Ipsum Generator</a></li>
@@ -47,8 +47,8 @@
 @section('mainBody')
     <h3>P3 Description</h3>
     <p>
-        This is the landing page for P3 project for the CSCIE-15. P3 includes two very healpful web-applications for
-        developers. the first is a Lorem Ipsum text-paragraph generator and the second one is a random user generator.
+        This is the landing page for P3 project for the CSCIE-15. P3 includes two helpful web-applications for
+        developers. The first is a Lorem Ipsum text-paragraph generator and the second one is a random user generator.
         You can find more information in the section below and you can visit the web-applications to try them yourself.
     </p>
 
@@ -59,9 +59,12 @@
     </p>
     <p>
         The Lorem Ipsum generator is a web application that creates pseudo latin paragraphs according to the user
-        specifications. The user can define the number of paragraphs as well as the size of paragraphs. The paragraphs
-        are created using the external package
-        <a href="https://packagist.org/packages/badcow/lorem-ipsum">badcow/lorem-ipsum</a>
+        specifications. The user can define the number of paragraphs, as well as the size of paragraphs and can add any
+        additional words or phrases that will be included in the text.
+    </p>
+    <p>
+        The paragraphs are created using the external package:
+        <a href="https://packagist.org/packages/badcow/lorem-ipsum">badcow/lorem-ipsum</a>.
     </p>
 
     <a href="/Lorem_Ipsum_Generator"><div class="image">
@@ -72,8 +75,13 @@
     <a class="TitleLink" href="/Random_User_Generator"><h3>Random User Generator</h3></a>
     <p>
         The random user generator is another helpful generator for developers. This app creates random users with name,
-        credentials and optional date of birth. The application provides two data formats for the created users to
-        assist developers; a basic text representation and a .json format.
+        email address and optional date of birth and address. The application provides three data formats for the
+        created users to assist developers; a basic text representation in a csv style format, a formatted text
+        representation (more user friendly) and a .json format.
+    </p>
+    <p>
+        The user data are created mostly using the external package:
+        <a href="https://packagist.org/packages/fzaninotto/faker">fzaninotto/faker</a>.
     </p>
     <a href="/Random_User_Generator"><div class="image">
         {{ HTML::image('Images/RandomUser.png', $alt='random user generator') }}

@@ -27,7 +27,8 @@
     </p>
     <p>
         You can choose the number of paragraphs as well as the size of the paragraphs and you can add a list of words or
-        phrases that you want to be displayed in the text (note: the separate word or phrases must be " , " separated).
+        phrases that you want to be displayed in the text (note: the words or phrases must be " , " separated to be
+        identified as individual).
     </p>
     <h3>Generator</h3>
 

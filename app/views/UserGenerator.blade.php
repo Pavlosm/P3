@@ -28,13 +28,14 @@
     <p>
         <dl>
             <dt>sequence of fields </dt>
-            <dd><small><i>[first name], [last name], [email], [date of birth (optional)], [address (optional)]</i></small></dd>
+            <dd><small><i>&nbsp;&nbsp;&nbsp;&nbsp;[first name], [last name], [email], [date of birth (optional)],
+                                                  [address (optional)]</i></small></dd>
             <dt>plain text format (csv style)</dt>
-            <dd><small><i> {{ $plain_user }} </i></small></dd>
+            <dd><small><i>&nbsp;&nbsp;&nbsp;&nbsp; {{ $plain_user }} </i></small></dd>
             <dt>formatted text format</dt>
-            <dd><small><i> {{ $formatted_user }} </i></small></dd>
+            <dd><small><i>&nbsp;&nbsp;&nbsp;&nbsp; {{ $formatted_user }} </i></small></dd>
             <dt>json format</dt>
-            <dd><small><i> {{ $json_user }} </i></small></dd>
+            <dd><small><i>&nbsp;&nbsp;&nbsp;&nbsp; {{ $json_user }} </i></small></dd>
         </dl>
     </p>
 
