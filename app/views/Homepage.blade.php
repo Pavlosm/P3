@@ -65,7 +65,7 @@
     </p>
 
     <a href="/Lorem_Ipsum_Generator"><div class="image">
-        {{ HTML::image('Images\LoremIpsum.png', $alt='lorem ipsum generator') }}
+        {{ HTML::image('Images/LoremIpsum.png', $alt='lorem ipsum generator') }}
     </div></a>
 
 
@@ -76,7 +76,7 @@
         assist developers; a basic text representation and a .json format.
     </p>
     <a href="/Random_User_Generator"><div class="image">
-        {{ HTML::image('Images\RandomUser.png', $alt='random user generator') }}
+        {{ HTML::image('Images/RandomUser.png', $alt='random user generator') }}
     </div> </a>
 
     <br />
