@@ -12,14 +12,14 @@
 
 
 @section('header')
-    <h1>Lorem Ipsum Generator</h1>
+    <h1>Random User Generator</h1>
 @stop
 
 
 @section('mainBody')
     <a href="/"><span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp; Homepage </a>
     &nbsp;|&nbsp;
-    <a href="/Lorem_Ipsum_Generator">Random User Generator &nbsp;<span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+    <a href="/Lorem_Ipsum_Generator">Lorem Ipsum Generator &nbsp;<span class="glyphicon glyphicon-circle-arrow-right"></span></a>
     <br /><br />
     <p>
         Use the generator below to create random user profiles that include a name and a surname, an email, and
