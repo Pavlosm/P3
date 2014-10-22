@@ -2,7 +2,7 @@
 
 
 @section('title')
-    <title> Lorem Ipsum Generator</title>
+    <title> pmi-Lorem Ipsum Generator</title>
 @stop
 
 
@@ -36,18 +36,18 @@
         {{ Form::open(array('url'=>'/Lorem_Ipsum_Generator', 'method'=>'POST', 'role'=>'form')) }}
 
         <div class="form-group">
-            {{ Form::label('numberOfParagraphs', 'Choose Number of paragraphs') }}
+            {{ Form::label('numberOfParagraphs', 'Choose Number of paragraphs:') }}
             {{ Form::select('numberOfParagraphs', [ '1', '2', '3', '4', '5', '6', '7', '8', '9' ], '4',
                              array('class' => 'form-control select')) }}
         </div>
 
         <div class="form-group">
-            {{ Form::label('additionalWords', 'Enter words that you want to include') }}
+            {{ Form::label('additionalWords', 'Enter words that you want to include:') }}
             {{ Form::text('additionalWords', null,
                           array('class' => 'form-control users', 'placeholder' => 'word1, word2, etc')) }}
         </div>
 
-        <label>'Enter words that you want to include'</label>
+        <label>Choose the size of the paragraphs:</label>
 
         <div>
             {{ Form::label('inlineRadio1', 'Small', array('class' => 'radio-inline')) }}

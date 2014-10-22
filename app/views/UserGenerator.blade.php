@@ -2,7 +2,7 @@
 
 
 @section('title')
-    <title> Random User Generator</title>
+    <title>pmi-Random User Generator</title>
 @stop
 
 
@@ -19,7 +19,7 @@
 @section('mainBody')
     <a href="/"><span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp; Homepage </a>
     &nbsp;|&nbsp;
-    <a href="/Lorem_Ipsum_Generator">Lorem Ipsum Generator &nbsp;<span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+    <a href="/Lorem_Ipsum_Generator">Random User Generator &nbsp;<span class="glyphicon glyphicon-circle-arrow-right"></span></a>
     <br /><br />
     <p>
         Use the generator below to create random user profiles that include a name and a surname, an email, and
@@ -28,14 +28,13 @@
     <p>
         <dl>
             <dt>sequence of fields </dt>
-            <dd><small><i>&nbsp;&nbsp;&nbsp;&nbsp;[first name], [last name], [email], [date of birth (optional)],
-                                                  [address (optional)]</i></small></dd>
+            <dd><small><i> [first name], [last name], [email], [date of birth (optional)], [address (optional)]</i></small></dd>
             <dt>plain text format (csv style)</dt>
-            <dd><small><i>&nbsp;&nbsp;&nbsp;&nbsp; {{ $plain_user }} </i></small></dd>
+            <dd><small><i> {{ $plain_user }} </i></small></dd>
             <dt>formatted text format</dt>
-            <dd><small><i>&nbsp;&nbsp;&nbsp;&nbsp; {{ $formatted_user }} </i></small></dd>
+            <dd><small><i> {{ $formatted_user }} </i></small></dd>
             <dt>json format</dt>
-            <dd><small><i>&nbsp;&nbsp;&nbsp;&nbsp; {{ $json_user }} </i></small></dd>
+            <dd><small><i> {{ $json_user }} </i></small></dd>
         </dl>
     </p>
 
